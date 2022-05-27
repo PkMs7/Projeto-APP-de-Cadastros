@@ -31,7 +31,7 @@ namespace Projeto_APP_de_Cadastros.classes
             retorno += "Gênero: " + this.Genero + Environment.NewLine;
             retorno += "Título: " + this.Titulo + Environment.NewLine;
             retorno += "Descrição: " + this.Descricao + Environment.NewLine;
-            retorno += "Ano de início: " + this.Ano + Environment.NewLine;
+            retorno += "Ano de início: " + this.Ano + Environment.NewLine; retorno += "Excluido: " + this.Excluido;
             return retorno;
         }
 
@@ -43,6 +43,11 @@ namespace Projeto_APP_de_Cadastros.classes
         internal int retornaId()
         {
             return this.Id;
+        }
+
+        public bool retornaExcluido()
+        {
+            return this.Excluido;
         }
 
         public void Excluir()

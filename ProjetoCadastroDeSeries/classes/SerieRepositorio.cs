@@ -1,12 +1,14 @@
 using System;
 using System.Collections.Generic;
 using ProjetoCadastroDeSeries.Interfaces;
+using Projeto_APP_de_Cadastros.classes;
+
 
 namespace ProjetoCadastroDeSeries.classes
 {
     public class SerieRepositorio : IRepositório<Series>
     {
-        private List<Series> listaSerie = new List<Serie>();
+        private List<Series> listaSerie = new List<Series>();
         public void Atualiza(int id, Series entidade)
         {
             listaSerie[id] = entidade;
@@ -14,27 +16,27 @@ namespace ProjetoCadastroDeSeries.classes
 
         public void Exclui(int id)
         {
-            throw new NotImplementedException();
+            listaSerie[id].Excluir();
         }
 
         public void Insere(Series entidade)
         {
-            throw new NotImplementedException();
+           listaSerie.Add(entidade);
         }
 
         public List<Series> Lista()
         {
-            throw new NotImplementedException();
+            return listaSerie;
         }
 
         public int ProximoId()
         {
-            throw new NotImplementedException();
+            return listaSerie.Count;
         }
 
-        public Serie RetornaPorId(int id)
+        public Series RetornaPorId(int id)
         {
-            throw new NotImplementedException();
+            return listaSerie[id];
         }
     }
 }
